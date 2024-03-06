@@ -133,5 +133,8 @@
 
 - [Bump zip4j from 2.7.0 to 2.9.1](https://github.com/fanyong920/jvppeteer/commit/5e0bbeb5651d67c0fdd2d1f4c187d24a8ed1dfcc)
 
-  
+### Version Release 1.1.6 (2024/03/06 为了传承未完成的事业!!!) 
 
+- [修改最新淘宝NPM镜像地址](https://github.com/fanyong920/jvppeteer/pull/145)
+
+- [解决下载chrome未创建文件夹出现的异常](https://github.com/fanyong920/jvppeteer/pull/126)

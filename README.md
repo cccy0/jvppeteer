@@ -9,6 +9,19 @@
 </p>
 
 
+**写在最前: 项目作者[fanyong920](https://github.com/fanyong920)上岸了, 因为用着顺手所以随手维护一下**
+要使用 maven,请将此依赖添加到pom.xml文件中：
+
+```xml
+<dependency>
+  <groupId>io.github.cccy0</groupId>
+  <artifactId>jvppeteer</artifactId>
+  <version>1.1.6</version>
+</dependency>
+```
+
+
+**----------------------------------以下是原文档----------------------------------------------**
 
 
 

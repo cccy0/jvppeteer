@@ -62,7 +62,8 @@ public class BrowserFetcher {
                 private static final long serialVersionUID = 3441562966233820720L;
 
                 {
-                    put("host", "https://npm.taobao.org/mirrors");
+//                    put("host", "https://npm.taobao.org/mirrors");
+                    put("host", "https://registry.npmmirror.com/-/binary");
                     put("linux", "%s/chromium-browser-snapshots/Linux_x64/%s/%s.zip");
                     put("mac", "%s/chromium-browser-snapshots/Mac/%s/%s.zip");
                     put("win32", "%s/chromium-browser-snapshots/Win/%s/%s.zip");
@@ -682,6 +683,7 @@ public class BrowserFetcher {
                 ZipEntry zipEntry = entries.nextElement();
                 String name = zipEntry.getName();
                 Path path = Paths.get(folderPath, name);
+                File file = path.toFile();
                 if (zipEntry.isDirectory()) {
                     path.toFile().mkdirs();
                 } else {
@@ -689,7 +691,8 @@ public class BrowserFetcher {
                         reader = new BufferedInputStream(zipFile.getInputStream(zipEntry));
                         int perReadcount;
                         byte[] buffer = new byte[Constant.DEFAULT_BUFFER_SIZE];
-                        wirter = new BufferedOutputStream(new FileOutputStream(path.toString()));
+                        FileUtil.createNewFile(file);
+                        wirter = new BufferedOutputStream(new FileOutputStream(file));
                         while ((perReadcount = reader.read(buffer, 0, Constant.DEFAULT_BUFFER_SIZE)) != -1) {
                             wirter.write(buffer, 0, perReadcount);
                         }
